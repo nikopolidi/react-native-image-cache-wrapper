@@ -21,6 +21,12 @@ interface Props {
 }
 
 declare class CachedImage extends React.Component<Props, any> {
+    static deleteCache(url: string): Promise<void>
+    static clearCache(): Promise<void>
+    static isUrlCached(url: string, success: Function, failure: Function): void
+    static getCacheFilename(url:string): string
+    static getSize(url: string, success: Function, failure: Function): void
+    static prefetch(url: string, expiration: number, success: Function, failure: Function): void
 }
 
 export default CachedImage;
